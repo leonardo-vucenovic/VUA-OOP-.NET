@@ -185,48 +185,37 @@ namespace Football_WindowsFormsApp
         private int printPages = 0;
         private void PrintAttendance(PrintPageEventArgs e)
         {
-            float dpiX = e.Graphics.DpiX; //Rezolucija monitora
-            float dpiY = e.Graphics.DpiY; //Rezolucija monitora
-            //Printable area
+            float dpiX = e.Graphics.DpiX;
+            float dpiY = e.Graphics.DpiY;
             RectangleF rectangleF = e.PageSettings.PrintableArea;
             rectangleF.X = rectangleF.X * dpiX / 50;
             rectangleF.Y = rectangleF.Y * dpiY / 50;
             rectangleF.Width = rectangleF.Width * dpiX / 100;
             rectangleF.Height = rectangleF.Height * dpiY / 100;
 
-            int numberOfPLayersPerPage = 5; //Broj kontrola po stranici
-            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage; //Koliko ih je isprintano po stranici svaki put, da se moze pratit koliko ih je jos ostalo
+            int numberOfPLayersPerPage = 5;
+            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage;
             int numberOfPlayerPerOneSpecificPage = 0;
-            //
             float top = rectangleF.Top;
             float y = top;
-
-            //ako ih ima za printanje i ako ih je isprintao manje od 5 (5 po stranici)
-            //velicina kontrole + margina
-            //pazi na tocku
             while (cuurentPlayerIndex < matchesUC.Count &&
                     y + matchesUC[cuurentPlayerIndex].Height + matchesUC[cuurentPlayerIndex].Margin.Vertical <= top + rectangleF.Height &&
                     numberOfPlayerPerOneSpecificPage < numberOfPLayersPerPage)
             {
-                //Uzmi trenutnog igraca
                 Control player = matchesUC[cuurentPlayerIndex];
-                //Napravi sirinu i visinu trenutne kontrole
                 Bitmap bitmap = new Bitmap(player.Width, player.Height);
-                //Print
                 player.DrawToBitmap(bitmap, player.ClientRectangle);
                 e.Graphics.DrawImage(bitmap, rectangleF.Left + player.Margin.Left, y + player.Margin.Top);
                 y += player.Height + player.Margin.Vertical;
 
-                cuurentPlayerIndex++; //Za pracenje koliko ih je isprintano iz liste
-                numberOfPlayerPerOneSpecificPage++; //Za racunanje broj kontrola po stranici
+                cuurentPlayerIndex++;
+                numberOfPlayerPerOneSpecificPage++;
             }
-            //Ako ima jos igraca za print
             if (cuurentPlayerIndex < matchesUC.Count)
             {
                 e.HasMorePages = true;
                 printPages++;
             }
-            //Ako nema vise igraca za printanje resetira stranice
             else
             {
                 e.HasMorePages = false;
@@ -236,48 +225,37 @@ namespace Football_WindowsFormsApp
 
         private void PrintYellowCards(PrintPageEventArgs e)
         {
-            float dpiX = e.Graphics.DpiX; //Rezolucija monitora
-            float dpiY = e.Graphics.DpiY; //Rezolucija monitora
-            //Printable area
+            float dpiX = e.Graphics.DpiX;
+            float dpiY = e.Graphics.DpiY;
             RectangleF rectangleF = e.PageSettings.PrintableArea;
             rectangleF.X = rectangleF.X * dpiX / 50;
             rectangleF.Y = rectangleF.Y * dpiY / 50;
             rectangleF.Width = rectangleF.Width * dpiX / 100;
             rectangleF.Height = rectangleF.Height * dpiY / 100;
 
-            int numberOfPLayersPerPage = 5; //Broj kontrola po stranici
-            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage; //Koliko ih je isprintano po stranici svaki put, da se moze pratit koliko ih je jos ostalo
+            int numberOfPLayersPerPage = 5;
+            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage;
             int numberOfPlayerPerOneSpecificPage = 0;
-            //
             float top = rectangleF.Top;
             float y = top;
-
-            //ako ih ima za printanje i ako ih je isprintao manje od 5 (5 po stranici)
-            //velicina kontrole + margina
-            //pazi na tocku
             while (cuurentPlayerIndex < playerYellows.Count &&
                     y + playerYellows[cuurentPlayerIndex].Height + playerYellows[cuurentPlayerIndex].Margin.Vertical <= top + rectangleF.Height &&
                     numberOfPlayerPerOneSpecificPage < numberOfPLayersPerPage)
             {
-                //Uzmi trenutnog igraca
                 Control player = playerYellows[cuurentPlayerIndex];
-                //Napravi sirinu i visinu trenutne kontrole
                 Bitmap bitmap = new Bitmap(player.Width, player.Height);
-                //Print
                 player.DrawToBitmap(bitmap, player.ClientRectangle);
                 e.Graphics.DrawImage(bitmap, rectangleF.Left + player.Margin.Left, y + player.Margin.Top);
                 y += player.Height + player.Margin.Vertical;
 
-                cuurentPlayerIndex++; //Za pracenje koliko ih je isprintano iz liste
-                numberOfPlayerPerOneSpecificPage++; //Za racunanje broj kontrola po stranici
+                cuurentPlayerIndex++;
+                numberOfPlayerPerOneSpecificPage++;
             }
-            //Ako ima jos igraca za print
             if (cuurentPlayerIndex < playerYellows.Count)
             {
                 e.HasMorePages = true;
                 printPages++;
             }
-            //Ako nema vise igraca za printanje resetira stranice
             else
             {
                 e.HasMorePages = false;
@@ -287,48 +265,36 @@ namespace Football_WindowsFormsApp
 
         private void PrintGoals(PrintPageEventArgs e)
         {
-            float dpiX = e.Graphics.DpiX; //Rezolucija monitora
-            float dpiY = e.Graphics.DpiY; //Rezolucija monitora
-            //Printable area
+            float dpiX = e.Graphics.DpiX;
+            float dpiY = e.Graphics.DpiY;
             RectangleF rectangleF = e.PageSettings.PrintableArea;
             rectangleF.X = rectangleF.X * dpiX / 50;
             rectangleF.Y = rectangleF.Y * dpiY / 50;
             rectangleF.Width = rectangleF.Width * dpiX / 100;
             rectangleF.Height = rectangleF.Height * dpiY / 100;
-
-            int numberOfPLayersPerPage = 5; //Broj kontrola po stranici
-            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage; //Koliko ih je isprintano po stranici svaki put, da se moze pratit koliko ih je jos ostalo
+            int numberOfPLayersPerPage = 5;
+            int cuurentPlayerIndex = printPages * numberOfPLayersPerPage;
             int numberOfPlayerPerOneSpecificPage = 0;
-            //
             float top = rectangleF.Top;
             float y = top;
-
-            //ako ih ima za printanje i ako ih je isprintao manje od 5 (5 po stranici)
-            //velicina kontrole + margina
-            //pazi na tocku
             while (cuurentPlayerIndex < pLayerGoals.Count &&
                     y + pLayerGoals[cuurentPlayerIndex].Height + pLayerGoals[cuurentPlayerIndex].Margin.Vertical <= top + rectangleF.Height &&
                     numberOfPlayerPerOneSpecificPage < numberOfPLayersPerPage)
             {
-                //Uzmi trenutnog igraca
                 Control player = pLayerGoals[cuurentPlayerIndex];
-                //Napravi sirinu i visinu trenutne kontrole
                 Bitmap bitmap = new Bitmap(player.Width, player.Height);
-                //Print
                 player.DrawToBitmap(bitmap, player.ClientRectangle);
                 e.Graphics.DrawImage(bitmap, rectangleF.Left + player.Margin.Left, y + player.Margin.Top);
                 y += player.Height + player.Margin.Vertical;
 
-                cuurentPlayerIndex++; //Za pracenje koliko ih je isprintano iz liste
-                numberOfPlayerPerOneSpecificPage++; //Za racunanje broj kontrola po stranici
+                cuurentPlayerIndex++;
+                numberOfPlayerPerOneSpecificPage++;
             }
-            //Ako ima jos igraca za print
             if (cuurentPlayerIndex < pLayerGoals.Count)
             {
                 e.HasMorePages = true;
                 printPages++;
             }
-            //Ako nema vise igraca za printanje resetira stranice
             else
             {
                 e.HasMorePages = false;

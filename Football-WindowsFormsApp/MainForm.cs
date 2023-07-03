@@ -22,11 +22,12 @@ namespace Football_WindowsFormsApp
 {
     public partial class MainForm : Form
     {
+        /*
         private const string HR = "Hrvatski-Croatian";
         private const string EN = "Engleski-English";
-
         private const string hr = "hr";
         private const string en = "en";
+        */
         private List<Team> teams;
         private string countryname = CheckSettings.LoadFavoriteCountry();
         public MainForm()
