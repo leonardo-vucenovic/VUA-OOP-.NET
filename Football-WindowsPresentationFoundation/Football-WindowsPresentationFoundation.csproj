@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Football_WindowsPresentationFoundation</RootNamespace>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\DefaultImageForPlayer.png" />
+    <None Remove="Resources\Field.jpg" />
+    <None Remove="Resources\Field.png" />
+    <None Remove="Resources\Icon.ico" />
+    <None Remove="Resources\Settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data Access Layer\Data Access Layer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\DefaultImageForPlayer.png" />
+    <Resource Include="Resources\Field.png" />
+    <Resource Include="Resources\Icon.ico" />
+    <Resource Include="Resources\Settings.png" />
+  </ItemGroup>
+
+</Project>

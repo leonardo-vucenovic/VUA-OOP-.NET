@@ -1,0 +1,224 @@
+﻿<Window x:Class="Football_WindowsPresentationFoundation.CountryInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_WindowsPresentationFoundation"
+        mc:Ignorable="d"
+        Title="Informacije" Height="500" Width="500"
+        Icon="Resources/Icon.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Width" 
+                                     From="0" To="500" 
+                                     Duration="0:0:0.5" 
+                                     FillBehavior="HoldEnd" 
+                                     AutoReverse="False" />
+                    <DoubleAnimation Storyboard.TargetProperty="Height" 
+                                     From="0" To="500" 
+                                     Duration="0:0:0.8" 
+                                     FillBehavior="HoldEnd" 
+                                     AutoReverse="False"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Color="DarkBlue" Offset="0.0" />
+                <GradientStop Color="DeepSkyBlue" Offset="0.25" />
+                <GradientStop Color="Wheat" Offset="0.75" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label
+            x:Name="lblDrzava"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Content="Drzava"
+            FontSize="25"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblPobjede"
+            Grid.Row="1"
+            Content="Pobjede:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblIzgubljene"
+            Grid.Row="2"
+            Content="Izgubljene:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblNeriješene"
+            Grid.Row="3"
+            Content="Neriješene:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblOdigraneUtakmice"
+            Grid.Row="4"
+            Content="Odigrane utakmice:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblBodovi"
+            Grid.Row="5"
+            Content="Bodovi:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblBrojZabijenihGolova"
+            Grid.Row="6"
+            Content="Broj zabijenih golova:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblBrojPrimljenihGolova"
+            Grid.Row="7"
+            Content="Broj primljenih golova:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <Label
+            x:Name="lblRazlika"
+            Grid.Row="8"
+            Content="Razlika:"
+            FontSize="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        
+        
+        
+        
+        
+        <Label
+            x:Name="lblPobjedeRezultat"
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblIzgubljeneRezultat"
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblNeriješeneRezultat"
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblOdigraneUtakmiceRezultat"
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblBodoviRezultat"
+            Grid.Row="5"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblBrojZabijenihGolovaRezultat"
+            Grid.Row="6"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblBrojPrimljenihGolovaRezultat"
+            Grid.Row="7"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Label
+            x:Name="lblRazlikaRezultat"
+            Grid.Row="8"
+            Grid.Column="1"
+            Content="10"
+            FontSize="14"
+            Foreground="Black"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <Button
+            x:Name="btnInformacijeDrzave"
+            Grid.Row="9"
+            Grid.Column="1"
+            Content="Zatvori"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" Click="btnCountryInformation_Click"/>
+    </Grid>
+</Window>
